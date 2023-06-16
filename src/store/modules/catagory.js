@@ -16,7 +16,7 @@ export default {
   },
   actions: {
     async getCatagory (context) {
-      const { data: { data: { channels } } } = await axios.get('http://api-toutiao-web.itheima.net/app/v1_0/user/channels')
+      const { data: { data: { channels } } } = await axios.get('http://toutiao.itheima.net/v1_0/user/channels')
       context.commit('updateCatagory', channels)
       context.commit('updateCurrentCatagory', channels[0].id)
     }

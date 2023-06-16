@@ -12,9 +12,7 @@ export default {
   },
   actions: {
     async getNewList (context, cataId) {
-      const results = await axios.get(`http://api-toutiao-web.itheima.net/app/v1_1/articles?channel_id=${cataId}&timestamp=${new Date().getTime()}&with_top=1`)
-      // const { data: { data: { results } } } = await axios.get(`http://api-toutiao-web.itheima.net/app/v1_1/articles?channel_id=${cataId}&timestamp=${new Date().getTime()}&with_top=1`)
-      console.log(results)
+      const { data: { data: { results } } } = await axios.get(`http://toutiao.itheima.net/v1_0/articles?channel_id=${cataId}&timestamp=${new Date().getTime()}&with_top=1`)
       context.commit('updateList', { currentCatagory: cataId, list: results })
     }
   }
