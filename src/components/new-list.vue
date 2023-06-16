@@ -16,13 +16,22 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'ToutiaoNewList',
   data () {
     return {
     }
   },
-
+  computed: {
+    ...mapGetters(['currentCatagory'])
+  },
+  watch: {
+    currentCatagory (newValue) {
+      this.$store.dispatch('newlist/getNewList', newValue)
+    }
+  },
   methods: {
   }
 }
