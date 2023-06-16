@@ -9,6 +9,8 @@ export default new Vuex.Store({
   state: {
   },
   getters: {
+    catagory: state => state.catagory.catagory,
+    currentCatagory: state => state.catagory.currentCatagory
   },
   mutations: {
   },
